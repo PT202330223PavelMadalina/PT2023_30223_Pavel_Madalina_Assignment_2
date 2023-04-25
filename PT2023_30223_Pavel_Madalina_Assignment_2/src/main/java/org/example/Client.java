@@ -1,9 +1,13 @@
+package org.example;
+
+import java.util.concurrent.atomic.AtomicInteger;
+
 public class Client implements Comparable{
     private int id;
     private int tArrival;
-    private int tService;
+    private AtomicInteger tService;
 
-    public Client(int id, int tArrival, int tService)
+    public Client(int id, int tArrival, AtomicInteger tService)
     {
         this.id=id;
         this.tArrival=tArrival;
@@ -29,7 +33,7 @@ public class Client implements Comparable{
     }
 
     public void settService(int tService) {
-        this.tService = tService;
+        this.tService = new AtomicInteger(tService);
     }
 
     public int gettArrival() {
@@ -37,7 +41,7 @@ public class Client implements Comparable{
     }
 
     public int gettService() {
-        return tService;
+        return tService.intValue();
     }
 
 
