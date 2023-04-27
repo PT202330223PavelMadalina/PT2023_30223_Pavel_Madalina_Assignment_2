@@ -1,5 +1,11 @@
 package org.example;
 
+import Model.Client;
+import Model.Server;
+import View.Designer;
+
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -39,27 +45,19 @@ public class SimulationManager implements Runnable {
 
     }
 
-   /* public void queuesGenerator() {
-        for (int i = 0; i < nbQueues; i++) {
-            listOfQueues.add(new Server());
-        }
-    }
-
-    */
-
     public void generateRandomClients()
     {
-        // Random r=new Random();
-        //for(int i=0;i<nbClients;i++)
-        //{
-        // int randomId=i;
-        //int randomTArrival=r.nextInt((maxArrival-minArrival)+1)+minArrival;
-        //int randomTService=r.nextInt((maxService-minService)+1)+minService;
-        //Client c=new Client(randomId,randomTArrival,randomTService);
-        //listOfClients.add(c);
-        int doi=2;
+         Random r=new Random();
+         for(int i=0;i<nbClients;i++)
+        {
+         int randomId=i;
+        int randomTArrival=r.nextInt((maxArrival-minArrival)+1)+minArrival;
+        int randomTService=r.nextInt((maxService-minService)+1)+minService;
+        Client c=new Client(randomId,randomTArrival,new AtomicInteger(randomTService));
+        listOfClients.add(c);
+        //int doi=2;
 
-        Client c1=new Client(1,2, new AtomicInteger(2));
+        /*Client c1=new Client(1,2, new AtomicInteger(2));
         Client c2=new Client(2,2,new AtomicInteger(3));
         Client c3=new Client(3,2,new AtomicInteger(3));
         Client c4=new Client(4,10,new AtomicInteger(2));
@@ -67,7 +65,11 @@ public class SimulationManager implements Runnable {
         listOfClients.add(c2);
         listOfClients.add(c3);
         listOfClients.add(c4);
-        // }
+
+         */
+         }
+
+
         Collections.sort(listOfClients);
     }
 
@@ -102,6 +104,17 @@ public class SimulationManager implements Runnable {
         return s;
     }
 
+    public void writeToFile(String fileName, String content) {
+        try {
+            FileWriter myWriter = new FileWriter(fileName);
+            myWriter.write(content);
+            myWriter.close();
+        } catch (IOException e) {
+            System.out.println("A aparut o eroare.");
+            e.printStackTrace();
+        }
+    }
+
     public void Print1(int currentTime) {
         System.out.println();
         System.out.println("TIME  " + currentTime);
@@ -124,7 +137,7 @@ public class SimulationManager implements Runnable {
             }
             if (clients.size() == 0)
                 System.out.println("closed");
-            // System.out.println(" -- size " + sizes[index - 1]);
+
         }
     }
 
@@ -136,49 +149,32 @@ public class SimulationManager implements Runnable {
         int currentTime=0;
         int max=0;
         int ora=0;
-       // int averageWaitingTime=0;
-        //for(int i=0;i<nbClients;i++)
-        //System.out.println(listOfClients.get(i).getId());
+        String stringt1="";
 
-
-
-        while(currentTime<simInterval)
+        while(currentTime<simInterval && (!listOfClients.isEmpty() || !scheduler.isEmpty()))
         {
-            //emptyQueues();
+
             int clientsperHour=0;
-            while( !listOfClients.isEmpty() && listOfClients.get(0).gettArrival()==currentTime)
-           // while(!listOfClients.isEmpty() && listOfClients.get(0).gettArrival()==currentTime )
+            while( !listOfClients.isEmpty() && listOfClients.get(0).gettArrival()==currentTime)//pt cazul cu mai multi clienti care au acelasi tArrival
             {
 
                 clientsperHour++;
-                //listOfQueues.get(iMinim).start();
 
-                //listOfQueues.get(iMinim).addClients(listOfClients.get(0));
                 scheduler.dispatchClients(listOfClients.get(0));
 
 
-                //Server s=listOfQueues.get(0);
-                //Thread t=new Thread(listOfQueues.get(iMinim));
-                //t.start();
 
-                //System.out.println("hahaha"+iMinim+listOfQueues.get(iMinim).isqOpen());
-                //System.out.println(listOfClients.get(0).gettService());
                 listOfClients.remove(listOfClients.get(0));
 
 
             }
-           // if(listOfClients.isEmpty() && qOpen==true)
-             //   break;
-
-
-            //Server ss=new Server();
-
 
             if(clientsperHour>max)
             {max=clientsperHour;
                 ora=currentTime;}
             Print1(currentTime);
             stringAf=printInt(currentTime);
+             stringt1 += printInt(currentTime);
             Designer.getTextArea1().append(stringAf);
             currentTime++;
             try {
@@ -203,6 +199,7 @@ public class SimulationManager implements Runnable {
         System.out.println("Ora de varf este: "+ora);
         String ov="Ora de varf este: "+ Integer.toString(ora);
         Designer.getTextArea1().append("\n"+ov);
+        writeToFile("testtest.txt",stringt1);
     }
 
     public int getNbClients() {

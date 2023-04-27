@@ -1,5 +1,8 @@
 package org.example;
 
+import Model.Client;
+import Model.Server;
+
 import java.util.List;
 
 public class ConcreteStrategyTime implements Strategy {
@@ -7,7 +10,6 @@ public class ConcreteStrategyTime implements Strategy {
     @Override
     public void addClient(List<Server> queues, Client c) {
         int minim=queues.get(0).getWaitingPeriod();
-        System.out.println(minim);
         Server cMinim=queues.get(0);
 
         for(Server queue:queues)

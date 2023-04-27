@@ -1,0 +1,45 @@
+---------------------------TIME  0--------------------------------
+Waiting clients: (0,2,2); (1,2,2); (2,2,4); (3,3,2); 
+Queue1 : closed
+Queue2 : closed
+
+---------------------------TIME  1--------------------------------
+Waiting clients: (0,2,2); (1,2,2); (2,2,4); (3,3,2); 
+Queue1 : closed
+Queue2 : closed
+
+---------------------------TIME  2--------------------------------
+Waiting clients: (3,3,2); 
+Queue1 : (0,2,2); (2,2,4); 
+Queue2 : (1,2,2); 
+
+---------------------------TIME  3--------------------------------
+Waiting clients: no more waiting clients
+Queue1 : (0,2,1); (2,2,4); 
+Queue2 : (1,2,1); (3,3,2); 
+
+---------------------------TIME  4--------------------------------
+Waiting clients: no more waiting clients
+Queue1 : (2,2,4); 
+Queue2 : (3,3,2); 
+
+---------------------------TIME  5--------------------------------
+Waiting clients: no more waiting clients
+Queue1 : (2,2,3); 
+Queue2 : (3,3,1); 
+
+---------------------------TIME  6--------------------------------
+Waiting clients: no more waiting clients
+Queue1 : (2,2,2); 
+Queue2 : closed
+
+---------------------------TIME  7--------------------------------
+Waiting clients: no more waiting clients
+Queue1 : (2,2,1); 
+Queue2 : closed
+
+---------------------------TIME  8--------------------------------
+Waiting clients: no more waiting clients
+Queue1 : closed
+Queue2 : closed
+

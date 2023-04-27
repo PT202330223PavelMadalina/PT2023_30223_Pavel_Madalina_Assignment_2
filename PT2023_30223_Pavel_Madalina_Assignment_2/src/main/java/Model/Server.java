@@ -1,8 +1,7 @@
-package org.example;
+package Model;
 
-import org.example.Client;
+import Model.Client;
 
-import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -31,30 +30,13 @@ public class Server implements Runnable {
         queueClients.add(newClient);
         timeW += this.waitingPeriod.get() + newClient.gettService();
         timeS+=newClient.gettService();
-        //this.qOpen=true;
         this.waitingPeriod.getAndAdd(newClient.gettService());
-
-        //this.run();
 
     }
 
     public  static float getTimeW() {
         return timeW;
     }
-/*public void updateWaitingTime() {
-        waitingPeriod = new AtomicInteger(0);
-        for (Client client : queueClients) {
-            waitingPeriod.addAndGet(client.gettService());// = waitingPeriod + client.gettService();
-        }
-    }
-
-    public void joinQueue(Client newClient) {
-        queueClients.add(newClient);
-        updateWaitingTime();
-    }
-
-    */
-
     public int isEmpty()
     {
         if(queueClients.isEmpty())
@@ -79,27 +61,17 @@ public class Server implements Runnable {
                     Thread.sleep(1000); // opriți thread-ul pentru 1 secunda
 
 
-                //System.out.println("clientttt" + (cl.gettService()));
-                //System.out.println("hahaha"+cl.getId());
-                //System.out.println(cl.gettService());
-
-
                 if (cl.gettService() == 1) //daca a ajuns la timpul de servire=1 inseamna ca a ajuns la "casa"
                 {
                     queueClients.remove(cl);
 
-                    //this.waitingPeriod = this.waitingPeriod - cl.gettService();
-                   // updateWaitingTime();
-                    //waitingPeriod.decrementAndGet();
-                }
 
+                }
+                else
                     cl.settService(cl.gettService()-1);
 
                 waitingPeriod.decrementAndGet();
 
-
-                    //this.waitingPeriod = this.waitingPeriod - 1;
-                    //updateWaitingTime();
 
 
 

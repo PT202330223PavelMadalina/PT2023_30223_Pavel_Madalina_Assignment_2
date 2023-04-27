@@ -1,0 +1,165 @@
+---------------------------TIME  0--------------------------------
+Waiting clients: (1,3,3); (2,8,2); (3,11,3); (0,28,4); 
+Queue1 : closed
+Queue2 : closed
+
+---------------------------TIME  1--------------------------------
+Waiting clients: (1,3,3); (2,8,2); (3,11,3); (0,28,4); 
+Queue1 : closed
+Queue2 : closed
+
+---------------------------TIME  2--------------------------------
+Waiting clients: (1,3,3); (2,8,2); (3,11,3); (0,28,4); 
+Queue1 : closed
+Queue2 : closed
+
+---------------------------TIME  3--------------------------------
+Waiting clients: (2,8,2); (3,11,3); (0,28,4); 
+Queue1 : (1,3,3); 
+Queue2 : closed
+
+---------------------------TIME  4--------------------------------
+Waiting clients: (2,8,2); (3,11,3); (0,28,4); 
+Queue1 : (1,3,2); 
+Queue2 : closed
+
+---------------------------TIME  5--------------------------------
+Waiting clients: (2,8,2); (3,11,3); (0,28,4); 
+Queue1 : (1,3,1); 
+Queue2 : closed
+
+---------------------------TIME  6--------------------------------
+Waiting clients: (2,8,2); (3,11,3); (0,28,4); 
+Queue1 : closed
+Queue2 : closed
+
+---------------------------TIME  7--------------------------------
+Waiting clients: (2,8,2); (3,11,3); (0,28,4); 
+Queue1 : closed
+Queue2 : closed
+
+---------------------------TIME  8--------------------------------
+Waiting clients: (3,11,3); (0,28,4); 
+Queue1 : (2,8,2); 
+Queue2 : closed
+
+---------------------------TIME  9--------------------------------
+Waiting clients: (3,11,3); (0,28,4); 
+Queue1 : (2,8,1); 
+Queue2 : closed
+
+---------------------------TIME  10--------------------------------
+Waiting clients: (3,11,3); (0,28,4); 
+Queue1 : closed
+Queue2 : closed
+
+---------------------------TIME  11--------------------------------
+Waiting clients: (0,28,4); 
+Queue1 : (3,11,3); 
+Queue2 : closed
+
+---------------------------TIME  12--------------------------------
+Waiting clients: (0,28,4); 
+Queue1 : (3,11,2); 
+Queue2 : closed
+
+---------------------------TIME  13--------------------------------
+Waiting clients: (0,28,4); 
+Queue1 : (3,11,1); 
+Queue2 : closed
+
+---------------------------TIME  14--------------------------------
+Waiting clients: (0,28,4); 
+Queue1 : closed
+Queue2 : closed
+
+---------------------------TIME  15--------------------------------
+Waiting clients: (0,28,4); 
+Queue1 : closed
+Queue2 : closed
+
+---------------------------TIME  16--------------------------------
+Waiting clients: (0,28,4); 
+Queue1 : closed
+Queue2 : closed
+
+---------------------------TIME  17--------------------------------
+Waiting clients: (0,28,4); 
+Queue1 : closed
+Queue2 : closed
+
+---------------------------TIME  18--------------------------------
+Waiting clients: (0,28,4); 
+Queue1 : closed
+Queue2 : closed
+
+---------------------------TIME  19--------------------------------
+Waiting clients: (0,28,4); 
+Queue1 : closed
+Queue2 : closed
+
+---------------------------TIME  20--------------------------------
+Waiting clients: (0,28,4); 
+Queue1 : closed
+Queue2 : closed
+
+---------------------------TIME  21--------------------------------
+Waiting clients: (0,28,4); 
+Queue1 : closed
+Queue2 : closed
+
+---------------------------TIME  22--------------------------------
+Waiting clients: (0,28,4); 
+Queue1 : closed
+Queue2 : closed
+
+---------------------------TIME  23--------------------------------
+Waiting clients: (0,28,4); 
+Queue1 : closed
+Queue2 : closed
+
+---------------------------TIME  24--------------------------------
+Waiting clients: (0,28,4); 
+Queue1 : closed
+Queue2 : closed
+
+---------------------------TIME  25--------------------------------
+Waiting clients: (0,28,4); 
+Queue1 : closed
+Queue2 : closed
+
+---------------------------TIME  26--------------------------------
+Waiting clients: (0,28,4); 
+Queue1 : closed
+Queue2 : closed
+
+---------------------------TIME  27--------------------------------
+Waiting clients: (0,28,4); 
+Queue1 : closed
+Queue2 : closed
+
+---------------------------TIME  28--------------------------------
+Waiting clients: no more waiting clients
+Queue1 : (0,28,4); 
+Queue2 : closed
+
+---------------------------TIME  29--------------------------------
+Waiting clients: no more waiting clients
+Queue1 : (0,28,3); 
+Queue2 : closed
+
+---------------------------TIME  30--------------------------------
+Waiting clients: no more waiting clients
+Queue1 : (0,28,2); 
+Queue2 : closed
+
+---------------------------TIME  31--------------------------------
+Waiting clients: no more waiting clients
+Queue1 : (0,28,1); 
+Queue2 : closed
+
+---------------------------TIME  32--------------------------------
+Waiting clients: no more waiting clients
+Queue1 : closed
+Queue2 : closed
+

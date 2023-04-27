@@ -1,5 +1,8 @@
 package org.example;
 
+import Model.Client;
+import Model.Server;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,7 +27,13 @@ public class Scheduler {
             t.start();
         }
     }
-
+    public boolean isEmpty()
+    {
+        for(int i=0;i<maxNoQueues;i++)
+            if(listOfQueues.get(i).isEmpty()==0)
+                return false;
+        return true;
+    }
 
 
     public List<Server> getListOfQueues() {
